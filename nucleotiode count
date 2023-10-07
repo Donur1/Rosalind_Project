@@ -1,0 +1,28 @@
+####Input: string
+####Output: COunt of the occurance of 'A', 'C', 'G', and 'T' occur in sequence
+
+
+
+with open('rosalind_dna.txt') as f:
+    sequence = f.read().rstrip()
+
+
+def count_sequence(sequence):
+    count_A = 0
+    count_T = 0
+    count_C = 0
+    count_G = 0
+    for i in sequence:
+        if i == 'A':
+            count_A += 1
+        elif i == 'T':
+            count_T += 1
+        elif i == 'C':
+            count_C += 1
+        elif i == 'G':
+            count_G += 1
+    return f"{count_A} {count_C} {count_G} {count_T}"
+
+count_sequence(sequence)
+print(count_sequence(sequence))
+
