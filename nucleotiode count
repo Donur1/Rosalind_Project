@@ -26,3 +26,53 @@ def count_sequence(sequence):
 count_sequence(sequence)
 print(count_sequence(sequence))
 
+
+####Input: string
+####Output: RNA Sequence
+
+
+# def count_sequence(sequence):
+#     Rna_Sequence = ""
+#     for i in sequence:
+#         if i == 'A':
+#             Rna_Sequence += "A"
+#         elif i == 'T':
+#             Rna_Sequence += "U"
+#         elif i == 'C':
+#             Rna_Sequence += "C"
+#         elif i == 'G':
+#             Rna_Sequence += "G"
+#     return f"{Rna_Sequence}"
+#
+# count_sequence(sequence)
+# print(count_sequence(sequence))
+#
+
+
+
+####Input: string
+####Output: Reverse complement 
+
+
+# def reverse_complement(sequence):
+#     complement_sequence = ""
+#
+#     for base in reversed(sequence):
+#         if base == 'A':
+#             complement_sequence += 'T'
+#         elif base == 'T':
+#             complement_sequence += 'A'
+#         elif base == 'C':
+#             complement_sequence += 'G'
+#         elif base == 'G':
+#             complement_sequence += 'C'
+#         else:
+#             # Handle any other characters (e.g.
+#             complement_sequence += base
+#
+#     return f"{complement_sequence}"
+#
+#
+# print(reverse_complement(sequence))
+
+##
