@@ -1,0 +1,79 @@
+
+with open(filename,"r") as outfile:
+    record = outfile.readlines()
+
+
+for line in record:
+    if "ORGANISM" in line:
+        organism = line.split("ORGANISM")[1].strip()
+    if "gene=" in line:
+        gene = line.split('=')[1]
+    if "DEFINITION" in line:
+        definition = line.split("DEFINITION")[1].strip()
+print(organism)
+print(gene)
+print(definition)
+
+
+#Getting the Accession Number
+for line in record:
+    if "ACCESSION" in line:
+        accession = line.split("ACCESSION")[1].strip()
+print(accession)
+
+
+#Getting the coding Region information
+j = 0
+k=0
+for i, line in enumerate(record):    
+    if 'CDS' in line:
+        j = i
+for i, line in enumerate(record):    
+    if 'ORIGIN' in line:
+        k = i
+coding_region = []
+for i, line in enumerate(record):
+    if j <= i < k:
+        coding_region.append(line.strip())
+    if i >= k:
+        break    
+for i in coding_region:
+    print(i) 
+
+
+##Sequence Information 
+origin = []
+for i, line in enumerate(record):
+    if "ORIGIN" in line:
+        origin.append(line.strip())
+    if '//' in line:
+        break
+    if len(origin) > 0:
+        origin.append(line.strip())
+for i in origin:
+    if "ORIGIN" in i:
+        next
+    else:
+        print(i)
+
+
+##Reference Information
+reference_list = []  # Initialize a list to store reference information
+j = 0
+k=0
+for i, line in enumerate(record):    
+    if 'FEATURES' in line:
+        j = i
+for i, line in enumerate(record):    
+    if 'REFERENCE' in line:
+        k = i
+        break
+        
+reference = []
+for i, line in enumerate(record):
+    if k <= i < j:
+        reference.append(line)
+    if i >= j:
+        break
+for i in reference:
+    print( i) 
